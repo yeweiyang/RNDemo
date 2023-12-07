@@ -1,0 +1,178 @@
+use_frameworks!
+
+require Pod::Executable.execute_command('node', ['-p',
+  'require.resolve(
+    "react-native/scripts/react_native_pods.rb",
+    {paths: [process.argv[1]]},
+  )', __dir__]).strip
+  
+prepare_react_native_project!
+
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
+
+linkage = ENV['USE_FRAMEWORKS']
+if linkage != nil
+  Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
+  use_frameworks! :linkage => linkage.to_sym
+end
+
+platform :ios , '13.0'
+source 'https://github.com/CocoaPods/Specs.git'
+#flutter_application_path = '../eduapp'
+#load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
+#$server_host="47.95.170.137"
+#$git_server="git@#{$server_host}:ios"
+#$http_server="http://oauth2:_qywwYU9Xy8oeQT7GbnQ@#{$server_host}/ios"
+##git地址不能使用的时候，server_address改成下面Http地址即可
+##$server_address="#{$git_server}"
+#$server_address="#{$http_server}"
+
+# 检查 Xcode 版本
+#def xcode_version
+#  `xcodebuild -version`.scan(/Xcode (\d+\.\d+)/).flatten.first.to_f
+#end
+
+# 指定第三方库版本
+#def specify_library_version
+#  if xcode_version >= 14.0
+#    pod 'JPush','5.0.0'
+#  else
+#    pod 'JCore', '3.2.3-noidfa'
+#    pod 'JPush', '4.8.0'
+#  end
+#end
+
+def edukit
+ #   pod 'EDUAppRouter', :git => "#{$server_address}/EDUAppRouter.git", :branch => 'feature/1.0.0'
+ #  pod 'EDUShortVideo', :git => "#{$server_address}/EDUShortVideo.git", :branch => 'feature/1.0.1',:subspecs => ['Core','AVPlayer']
+#    pod 'EDUShortVideo', :path => '/Users/qiangma/51CTO/EDUShortVideo'
+#    pod 'AwesomeProject', :path => '/Users/qiangma/Documents/ReactNative/AwesomeProject'
+#    pod 'rn-scrollview', :path => '/Users/qiangma/Downloads/rn-scrollview'
+#    pod 'RNProject', :path => '/Users/qiangma/Documents/ReactNative/RNProject'
+end
+
+def thirdpartykit
+  
+  # install_all_flutter_pods(flutter_application_path)
+     pod 'SDWebImage', '~> 5.0.0'
+     pod 'Masonry', '~> 1.1.0'
+     pod 'AFNetworking', '~> 4.0.1'
+     pod 'SVProgressHUD'
+     pod 'JSONModel', '~> 1.7.0'
+     pod 'FMDB', '~> 2.7.2'
+     pod 'FHHFPSIndicator', '~> 1.0.0'
+     pod 'SobotKit', '~> 2.9.9'
+     pod 'UMCommon', '~> 7.3.1'
+     pod 'UMAPM', '~> 1.3.1'
+     pod 'UMDevice', '~> 2.0.2'
+#     pod 'UMCSecurityPlugins', '~> 1.0.6'
+     pod 'UMPush'
+     pod 'UMShare/Social/ReducedQQ'
+     pod 'UMShare/Social/ReducedSina'
+     pod 'UMShare/UI'
+    #pod 'UMCCommonLog', '~> 1.0.0'
+     pod 'ThemeManager', '~> 1.0.1'
+     pod 'YYKit'
+     pod 'SensorsAnalyticsSDK','~> 2.6.8', :subspecs => ['DISABLE_UIWEBVIEW']
+     pod 'MZTimerLabel', '~> 0.5.4'
+     pod 'IQKeyboardManager', '~> 6.1.1'
+     pod 'MJRefresh', '~> 3.5.0'
+     pod 'Reachability', '~> 3.2'
+     pod 'MBProgressHUD', '~> 1.1.0'
+     pod 'lottie-ios', '~> 2.5.0'
+     
+     
+     # 保利威 多场景 SDK
+     pod 'PLVLiveScenesSDK', '1.14.0'
+     pod 'PLVImagePickerController', '~> 0.1.2' 
+     
+#     pod 'PolyvCloudClassSDK', '~> 0.16.3' # polyv 云课堂 SDK
+
+#     pod 'PolyvCloudClassSDK/Core', '~> 0.16.3'
+#     pod 'PolyvCloudClassSDK/Player','~> 0.16.3'
+#     pod 'AgoraRtcEngine_iOS', '2.9.0.107'
+#     pod 'Socket.IO-Client-Swift', '~> 14.0.0'
+#     pod 'PolyvAliHttpDNS/AlicloudHttpDNS', '~> 1.8.0'
+#     pod 'PolyvAliHttpDNS/AlicloudUtils', '~> 1.8.0'
+     
+     # pod 'PolyvAliHttpDNS/UTDID', '~> 1.8.0'
+
+     pod 'WechatOpenSDK'
+     pod 'AliPlayerSDK_iOS' , '6.5.0' #'5.4.6.0-24196700'
+     pod 'MMKV', '~> 1.2.10'
+     pod 'MRDLNA'
+     pod "dsBridge"
+     pod 'FDFullscreenPopGesture', '1.1'
+     #pod 'FLEX', :configurations => ['Debug']
+     pod 'Bugly'
+     pod 'WebViewJavascriptBridge'
+     pod 'extobjc','~> 0.0.1'
+     pod 'SVGAPlayer'
+     pod 'Protobuf','3.21.12'  #依赖
+     
+     pod 'GKVideoScrollView'
+     pod 'GKSliderView'
+#     pod 'ZFPlayer/AVPlayer'
+     
+#     pod 'ZFPlayer',:git=>'git@github.com:iamanthonyzhu/ZFPlayerCoreAli.git'
+
+#    pod 'LookinServer', :configurations => ['Debug']
+end
+
+#use_frameworks!
+
+target 'MyDemo' do
+  
+#  edukit
+  thirdpartykit
+  
+  # 指定第三方库版本
+#  specify_library_version
+  
+  # RN相关配置
+  config = use_native_modules!
+
+   # Flags change depending on the env values.
+   flags = get_default_flags()
+
+   use_react_native!(
+     :path => config[:reactNativePath],
+     # Hermes is now enabled by default. Disable by setting this flag to false.
+     :hermes_enabled => flags[:hermes_enabled],
+     :fabric_enabled => flags[:fabric_enabled],
+     # Enables Flipper.
+     #
+     # Note that if you have use_frameworks! enabled, Flipper will not work and
+     # you should disable the next line.
+     :flipper_configuration => FlipperConfiguration.disabled,
+     # An absolute path to your application root.
+     :app_path => "#{Pod::Config.instance.installation_root}/.."
+   )
+
+   post_install do |installer|
+     
+     installer.pods_project.targets.each do |target|
+       target.build_configurations.each do |config|
+         #      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+         config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+         config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
+         config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+         config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+       end
+     end
+     
+     react_native_post_install(
+                               installer,
+                               config[:reactNativePath],
+                               :mac_catalyst_enabled => false
+                               )
+                               __apply_Xcode_12_5_M1_post_install_workaround(installer)
+   end
+
+end
+
+
