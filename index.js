@@ -26,8 +26,8 @@ class RNHighScores extends React.Component {
           onPress={() => {
             const CalendarManager = NativeModules.CalendarManager;
             CalendarManager.addEvent(
-             'Birthday Party',
-              '4 Privet Drive, Surrey'
+             'RN_param1',
+              'RN_param2'
           );
           }}
          title="点我返回，并调用oc的方法！"

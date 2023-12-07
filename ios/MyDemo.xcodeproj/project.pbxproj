@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		81FFA3A3344284D96C2FAE3E /* Pods_MyDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88631BBD4996052C8E1E034F /* Pods_MyDemo.framework */; };
+		4A84DB5493C1484A4B28E280 /* libPods-MyDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD7F7B29440050F61E873F5 /* libPods-MyDemo.a */; };
+		EF1324502B22027800EFC2A5 /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF13244E2B22027700EFC2A5 /* CalendarManager.m */; };
 		EF88BB222B2076F300B3D847 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF88BB212B2076F300B3D847 /* AppDelegate.m */; };
 		EF88BB252B2076F300B3D847 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF88BB242B2076F300B3D847 /* SceneDelegate.m */; };
 		EF88BB282B2076F300B3D847 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF88BB272B2076F300B3D847 /* ViewController.m */; };
@@ -19,8 +20,10 @@
 
 /* Begin PBXFileReference section */
 		2D8C000356292E28DADF3108 /* Pods-MyDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDemo.debug.xcconfig"; path = "Target Support Files/Pods-MyDemo/Pods-MyDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		88631BBD4996052C8E1E034F /* Pods_MyDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DD7F7B29440050F61E873F5 /* libPods-MyDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5274440811FB9E9A577EDB4 /* Pods-MyDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDemo.release.xcconfig"; path = "Target Support Files/Pods-MyDemo/Pods-MyDemo.release.xcconfig"; sourceTree = "<group>"; };
+		EF13244E2B22027700EFC2A5 /* CalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
+		EF13244F2B22027700EFC2A5 /* CalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
 		EF88BB1D2B2076F300B3D847 /* MyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF88BB202B2076F300B3D847 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF88BB212B2076F300B3D847 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81FFA3A3344284D96C2FAE3E /* Pods_MyDemo.framework in Frameworks */,
+				4A84DB5493C1484A4B28E280 /* libPods-MyDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +53,7 @@
 		801FC87B9E93595314742768 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				88631BBD4996052C8E1E034F /* Pods_MyDemo.framework */,
+				4DD7F7B29440050F61E873F5 /* libPods-MyDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -76,6 +79,8 @@
 		EF88BB1F2B2076F300B3D847 /* MyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EF13244F2B22027700EFC2A5 /* CalendarManager.h */,
+				EF13244E2B22027700EFC2A5 /* CalendarManager.m */,
 				EF88BB202B2076F300B3D847 /* AppDelegate.h */,
 				EF88BB212B2076F300B3D847 /* AppDelegate.m */,
 				EF88BB232B2076F300B3D847 /* SceneDelegate.h */,
@@ -112,7 +117,7 @@
 				EF88BB1A2B2076F300B3D847 /* Frameworks */,
 				EF88BB1B2B2076F300B3D847 /* Resources */,
 				B1EE49B38F40DE649B05E4C3 /* [CP] Embed Pods Frameworks */,
-				E21284657BA95BCA5BA7382D /* [CP] Copy Pods Resources */,
+				37B78F4E1AC84BAA0C8169B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -169,6 +174,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		37B78F4E1AC84BAA0C8169B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDemo/Pods-MyDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDemo/Pods-MyDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyDemo/Pods-MyDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B1EE49B38F40DE649B05E4C3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,23 +206,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyDemo/Pods-MyDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E21284657BA95BCA5BA7382D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyDemo/Pods-MyDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyDemo/Pods-MyDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyDemo/Pods-MyDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FCC87491CC890ADA5460C614 /* [CP] Check Pods Manifest.lock */ = {
@@ -232,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF1324502B22027800EFC2A5 /* CalendarManager.m in Sources */,
 				EF88BB282B2076F300B3D847 /* ViewController.m in Sources */,
 				EF88BB222B2076F300B3D847 /* AppDelegate.m in Sources */,
 				EF88BB332B2076F500B3D847 /* main.m in Sources */,
@@ -327,10 +333,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -398,10 +401,7 @@
 				MTL_FAST_MATH = YES;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
